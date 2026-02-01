@@ -18,7 +18,7 @@ public void printColor(){
 public class OOPS {
     public static void main(String[] args) {
         // create objects of the pen
-        Pen p1=new Pen();
+        Pen p1=new Pen(); //new is a keyword in Java.It is used to create an object.
         p1.color="Red"; //assign a color
         p1.type="Gel"; //assign type
 
