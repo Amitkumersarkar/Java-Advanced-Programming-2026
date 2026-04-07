@@ -8,17 +8,30 @@ public class Database {
 
     public static void saveResult(String winner) {
         try {
-            Connection conn = DriverManager.getConnection(URL, USER, PASS);
+            // ✅ Load driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
+            // ✅ Connect
+            Connection conn = DriverManager.getConnection(URL, USER, PASS);
+            System.out.println("✅ Connected to Database!");
+
+            // ✅ Insert data
             String query = "INSERT INTO results (winner) VALUES (?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, winner);
 
             ps.executeUpdate();
+            System.out.println("✅ Data Inserted!");
 
             conn.close();
         } catch (Exception e) {
+            System.out.println("❌ Error Occurred:");
             e.printStackTrace();
         }
+    }
+
+    // ✅ Test main method
+    public static void main(String[] args) {
+        saveResult("TEST");
     }
 }
