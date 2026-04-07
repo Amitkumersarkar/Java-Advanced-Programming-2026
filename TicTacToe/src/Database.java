@@ -4,7 +4,7 @@ public class Database {
 
     static final String URL = "jdbc:mysql://localhost:3306/tictactoe";
     static final String USER = "root";
-    static final String PASS = ""; // your password
+    static final String PASS = "";
 
     public static void saveResult(String winner) {
         try {
